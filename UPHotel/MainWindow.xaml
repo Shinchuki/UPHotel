@@ -1,0 +1,27 @@
+﻿<Window x:Class="UPHotel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UPHotel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="1000" Icon="C:\Users\Zver\source\repos\UPHotel\UPHotel\Resources\icons8-among-us-480.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="300*"/>
+            <RowDefinition Height="39*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+            <Button x:Name="BackButton" Content="Назад" HorizontalAlignment="Right" Margin="0,0,0,-1" VerticalAlignment="Center" Width="125" Height = "110" Click="BackButton_Click" FontSize="36" Background="#FFA80404"/>
+            <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Турагентство Кишлака" VerticalAlignment="Center" Foreground="#FFEE7C0A" FontFamily="Comic Sans MS" FontSize="24" Height="43"/>
+        </Grid>
+
+        <Grid Grid.Row="1"></Grid>
+
+        <Grid Grid.Row="2" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}"></Grid>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"/>
+    </Grid>
+</Window>

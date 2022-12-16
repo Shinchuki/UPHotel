@@ -1,0 +1,39 @@
+﻿<Page x:Class="UPHotel.AddEditToursPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UPHotel"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditToursPage">
+
+    <Grid Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="500*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="85*"/>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="81*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Text="Название тура" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFEE7C0A" FontFamily="Comic Sans MS" FontSize="24" Height="34" Width="164"/>
+        <TextBlock Text="Билетов осталось" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFEE7C0A" FontFamily="Comic Sans MS" FontSize="24" Grid.Row="1" Height="34" Width="208"/>
+        <TextBlock Text="Актуален" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFEE7C0A" FontFamily="Comic Sans MS" FontSize="24" Grid.Row="2" Height="34" Width="108"/>
+        <TextBlock Text="Цена" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Foreground="#FFEE7C0A" FontFamily="Comic Sans MS" FontSize="24" Grid.Row="3" Height="34" Width="65"/>
+
+        <TextBox Text = "{Binding Name}" MaxLength="100" Grid.Column="1" HorizontalAlignment="Center" Height="24"  TextWrapping="Wrap" VerticalAlignment="Center" Width="480"/>
+        <TextBox Text = "{Binding TicketCount}" Grid.Column="1" Grid.Row = "1" HorizontalAlignment="Center" Height="24"  TextWrapping="Wrap" VerticalAlignment="Center" Width="480" />
+        <ComboBox SelectedItem="{Binding IsActual}" x:Name="ComboActual" Grid.Column="1" Grid.Row="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Width="480" Height="22">
+            <ComboBoxItem x:Name="CBItemActual" Content="Актуален" Selected="ComboBoxItem_Selected"/>
+            <ComboBoxItem x:Name="CBItemNotActual" Content="Завершен" Selected="ComboBoxItem_Selected_1"/>
+        </ComboBox>
+        <TextBox Text = "{Binding Price}" Grid.Column="1" Grid.Row = "3" HorizontalAlignment="Center" Height="24"  TextWrapping="Wrap" VerticalAlignment="Center" Width="480" />
+        
+        <Button x:Name="ButtonSave"  Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="4" Content="Сохранить" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height = "50" Grid.RowSpan="3" Click="ButtonSave_Click"/>
+    </Grid>
+</Page>
